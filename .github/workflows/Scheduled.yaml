@@ -1,8 +1,14 @@
 on:
-    schedule:
-        - cron: "20 21 * * *"
     workflow_dispatch:
-
+        inputs:
+          environment:
+              description: "choose environment"
+              required: true
+              default: "staging"
+              type: choice
+              options:
+                - staging
+                - production
 jobs:
     daily_task:
       runs-on: ubuntu-22.04
