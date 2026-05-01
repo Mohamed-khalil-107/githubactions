@@ -13,5 +13,5 @@ jobs:
     daily_task:
       runs-on: ubuntu-22.04
       steps:
-          - name: Print Message
-            run: echo "Hello,world"
+          - name: Deployment Message
+            run: echo "Deploying The Application in ${{inputs.environment}}"
