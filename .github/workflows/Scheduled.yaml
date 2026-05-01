@@ -1,0 +1,10 @@
+on:
+    schedule:
+        - cron: "11 12 * * *"
+
+jobs:
+    daily_task:
+      runs-on: ubuntu-22.04
+      steps:
+          - name: Print Message
+            run: echo "Hello,world"
