@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "choose environment"
+        required: true
+        default: "stage"
+        type: choice
+        options:
+          - stage
+          - production
+
+jobs:
+  daily_task:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deployment Message
+        # Using github.event.inputs for maximum compatibility
+        run: echo "Deploying The Application in ${{ github.event.inputs.environment }}"
