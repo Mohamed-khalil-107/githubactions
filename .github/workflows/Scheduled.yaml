@@ -14,4 +14,4 @@ jobs:
       runs-on: ubuntu-22.04
       steps:
           - name: Deployment Message
-            run: echo "Deploying The Application in ${{inputs.environment}}"
+            run: echo "Deploying The Application in ${{ github.event.inputs.environment }}"
