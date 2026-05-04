@@ -7,7 +7,7 @@ on:
               default: "staging"
               type: choice
               options:
-                - staging
+                - STAGING
                 - production
 jobs:
     daily_task:
