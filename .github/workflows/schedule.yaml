@@ -11,9 +11,8 @@ on:
           - production
 
 jobs:
-  daily_task:
+  deploy:
     runs-on: ubuntu-22.04
     steps:
       - name: Deployment Message
-        # Using github.event.inputs for maximum compatibility
-        run: echo "Deploying The Application in ${{ github.event.inputs.environment }}"
+        run: echo "Deploying The Application in ${{ inputs.environment }}"
