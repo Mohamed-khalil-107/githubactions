@@ -10,7 +10,7 @@ jobs:
           npm install
           npm run build 
         working-directory : ./tmp
-        shell : bash  
+        shell : shell  
   job_2:
     runs-on: ubuntu-latest
     needs: job_1
