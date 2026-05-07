@@ -1,6 +1,6 @@
 name: "Jobs-Workflow"
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs: 
   job_1:
