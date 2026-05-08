@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  hybrid_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: VM step
+        run: echo "Running tests on a VM"       
+
+      - name: Container Step
+        uses : docker://alpine:latest //must be accessible from the runner
+        with:
+          endpoint: /bin/sh
+          args: |
+            -c "echo 'Running tests in a Docker container' "
+      
+      - name: Back to VM
+        run: echo "Back on the VM"
