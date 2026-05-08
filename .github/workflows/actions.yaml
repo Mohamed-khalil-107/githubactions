@@ -9,7 +9,7 @@ jobs:
         run: echo "Running tests on a VM"       
 
       - name: Container Step
-        uses : docker://alpine:latest //must be accessible from the runner
+        uses : docker://alpine:latest 
         with:
           endpoint: /bin/sh
           args: |
