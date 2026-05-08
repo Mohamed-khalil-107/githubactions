@@ -12,8 +12,7 @@ jobs:
         uses : docker://alpine:latest 
         with:
           endpoint: /bin/sh
-          args: |
-            -c "echo 'Running tests in a Docker container' "
+          args: sh -c "echo 'Running tests in a Docker container' "
       
       - name: Back to VM
         run: echo "Back on the VM"
