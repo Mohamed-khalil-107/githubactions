@@ -18,9 +18,3 @@ jobs:
     - name: Clean up on failure
       run: echo "Deployment Succeded"
       if: success() 
-    - name: Report failure
-      run: echo "Deployment falied"
-      if: failure()
-    - name: Report cancellation
-      run: echo "Deployment cancelled"
-      if: cancelled()
