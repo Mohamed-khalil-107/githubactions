@@ -2,18 +2,19 @@ on:
   push:
 
 jobs: 
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    
-    - name:  General build 
-      run: echo "This is a general build step that runs on every push."
+  expression-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name:  General build 
+        run: echo "This is a general build step that runs on every push."
 
-    - name: Conditional Deployment
-      if: github.ref == 'refs/heads/main'
-      run: echo "This step runs only when pushing to the main branch."
+      - name: Conditional Deployment
+        if: github.ref == 'refs/heads/main'
+        run: echo "This step runs only when pushing to the main branch."
 
-    - name: Dev Notification
-      if: github.ref == 'refs/heads/dev'
-      run: echo "This step runs only when pushing to the dev branch."
+      - name: Dev Notification
+        if: github.ref == 'refs/heads/dev'
+        run: echo "This step runs only when pushing to the dev branch."
